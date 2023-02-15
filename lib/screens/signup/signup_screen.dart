@@ -108,7 +108,7 @@ class SignUpScreen extends StatelessWidget {
                           return;
                         }
                         context.read<UserManager>().signUp(
-                              users: user,
+                              user: user,
                               onSucess: () {
                                 debugPrint('Sucesso');
                                 // TODO: POP

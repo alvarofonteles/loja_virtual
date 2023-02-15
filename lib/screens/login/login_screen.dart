@@ -93,7 +93,7 @@ class LoginSreen extends StatelessWidget {
 
                                 // usando o consumidor
                                 userManager.signIn(
-                                    users: users.User(
+                                    user: users.User(
                                       email: emailController.text,
                                       password: passController.text,
                                     ),
