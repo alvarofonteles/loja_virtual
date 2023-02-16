@@ -45,6 +45,7 @@ class UserManager extends ChangeNotifier {
       {required User user,
       required Function onFail,
       required Function onSucess}) async {
+    loading = true;
     try {
       final user_auth.UserCredential result =
           await auth.createUserWithEmailAndPassword(
@@ -60,6 +61,7 @@ class UserManager extends ChangeNotifier {
     } on user_auth.FirebaseAuthException catch (e) {
       onFail(getErrorString(e.code));
     }
+    loading = false;
   }
 
   void signOut() {

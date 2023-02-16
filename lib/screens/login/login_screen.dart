@@ -48,6 +48,7 @@ class LoginSreen extends StatelessWidget {
             child: Consumer<UserManager>(
               builder: (_, userManager, child) => ListView(
                 padding: const EdgeInsets.all(16),
+                // menor espaço possivel
                 shrinkWrap: true,
                 children: <Widget>[
                   TextFormField(
@@ -117,7 +118,6 @@ class LoginSreen extends StatelessWidget {
                                       );
                                     },
                                     onSucess: () {
-                                      // debugPrint('Sucesso.');
                                       Navigator.of(context).pop();
                                     });
                               }
