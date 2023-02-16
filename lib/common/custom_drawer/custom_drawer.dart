@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loja_virtual/common/custom_drawer/custom_drawer_deader.dart';
+import 'package:loja_virtual/common/custom_drawer/custom_drawer_header.dart';
 import 'package:loja_virtual/common/custom_drawer/drawer_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
