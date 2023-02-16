@@ -14,7 +14,27 @@ class ProductManager {
 
     for (DocumentSnapshot doc in snapProducts.docs) {
       // mostar toda lista '${doc.data}'
-      debugPrint('Produtos: ${doc.data}');
+      debugPrint('UID: ${doc.id} - Produtos: ${doc.data}');
     }
+
+    // anotherExamples(firestore);
   }
+}
+
+// mais exemplos
+void anotherExamples(FirebaseFirestore firestore) {
+  // altera
+  firestore.doc('products/Rp7dh3jKEW7M2sd9SZBw').update({
+    'description': 'Camiseta de alta qualidade!!!',
+    'name': 'Camiseta Branca',
+  });
+
+  // lista valores do produto
+  firestore.collection('products').snapshots().listen((snapshot) {
+    for (DocumentSnapshot snapProducts in snapshot.docs) {
+      debugPrint(snapProducts.data.toString());
+      debugPrint(snapProducts.get('name'));
+      debugPrint(snapProducts.get('description'));
+    }
+  });
 }

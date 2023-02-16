@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
-        title: 'Loja do Daniel',
+        title: 'Loja do Fco Willian',
         // remove o banner de debug
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

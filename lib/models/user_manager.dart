@@ -82,8 +82,6 @@ class UserManager extends ChangeNotifier {
           await firestore.doc('users/${currentUser.uid}').get();
       user = User.fromDocument(docUser);
 
-      // debugPrint('UID: ${user!.id}');
-      // debugPrint('Nome: ${user!.name}');
       notifyListeners();
     }
   }
