@@ -16,6 +16,8 @@ class UserManager extends ChangeNotifier {
   bool _loading = false;
   bool get loading => _loading;
 
+  bool get isLoggedIn => user != null;
+
   // logar/usuario
   Future<void> signIn(
       {required User user,
@@ -60,6 +62,12 @@ class UserManager extends ChangeNotifier {
     }
   }
 
+  void signOut() {
+    auth.signOut();
+    user = null;
+    notifyListeners();
+  }
+
   set loading(bool value) {
     _loading = value;
     notifyListeners();
@@ -72,8 +80,8 @@ class UserManager extends ChangeNotifier {
           await firestore.doc('users/${currentUser.uid}').get();
       user = User.fromDocument(docUser);
 
-      debugPrint('UID: ${user!.id}');
-      debugPrint('Nome: ${user!.name}');
+      // debugPrint('UID: ${user!.id}');
+      // debugPrint('Nome: ${user!.name}');
       notifyListeners();
     }
   }

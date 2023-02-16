@@ -20,7 +20,7 @@ class BaseScreen extends StatelessWidget {
         // não mover ao arrastar para o lado
         physics: const NeverScrollableScrollPhysics(),
         children: <Widget>[
-          const LoginSreen(),
+          // const LoginSreen(),
           Scaffold(
             drawer: const CustomDrawer(),
             appBar: AppBar(
