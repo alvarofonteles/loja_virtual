@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/product.dart';
 
 class ProductListTile extends StatelessWidget {
-  const ProductListTile({super.key, this.product});
+  const ProductListTile(this.product, {super.key});
 
   final Product? product;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SearchDialog extends StatelessWidget {
-  const SearchDialog({super.key, this.initialText});
+  const SearchDialog(this.initialText, {super.key});
 
   final String? initialText;
 
@@ -11,9 +11,9 @@ class SearchDialog extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Positioned(
-          top: 6,
-          left: 6,
-          right: 6,
+          top: 7,
+          left: 7,
+          right: 7,
           child: Card(
             child: TextFormField(
               initialValue: initialText,

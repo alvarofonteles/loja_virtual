@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:loja_virtual/common/custom_drawer/custom_drawer.dart';
 import 'package:loja_virtual/models/product_manager.dart';
 import 'package:loja_virtual/screens/products/components/product_list_tile.dart';
@@ -13,6 +12,19 @@ class ProductsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color colorPrimary = Theme.of(context).primaryColor;
+
+    void searchDialog(
+        ProductManager productManager, BuildContext context) async {
+      final search = showDialog(
+        context: context,
+        builder: (_) => SearchDialog(productManager.search),
+      );
+
+      if (search.toString().trim().isNotEmpty) {
+        productManager.search = await search;
+      }
+    }
+
     return Scaffold(
       drawer: const CustomDrawer(),
       appBar: AppBar(
@@ -32,7 +44,7 @@ class ProductsScreen extends StatelessWidget {
                           ),
                         ),
                         onTap: () async {
-                          searchShowDialog(productManager, context);
+                          searchDialog(productManager, context);
                         },
                       );
               },
@@ -47,7 +59,7 @@ class ProductsScreen extends StatelessWidget {
                   ? IconButton(
                       icon: const Icon(Icons.search),
                       onPressed: () async {
-                        searchShowDialog(productManager, context);
+                        searchDialog(productManager, context);
                       },
                     )
                   : IconButton(
@@ -68,22 +80,11 @@ class ProductsScreen extends StatelessWidget {
             padding: const EdgeInsets.all(7),
             itemCount: filteredProducts.length,
             itemBuilder: (_, index) {
-              return ProductListTile(product: filteredProducts[index]);
+              return ProductListTile(filteredProducts[index]);
             },
           );
         },
       ),
     );
-  }
-}
-
-void searchShowDialog(
-    ProductManager productManager, BuildContext context) async {
-  final search = showDialog(
-    context: context,
-    builder: (_) => SearchDialog(initialText: productManager.search),
-  );
-  if (search.toString().trim().isNotEmpty) {
-    productManager.search = await search;
   }
 }
