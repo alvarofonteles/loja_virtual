@@ -29,7 +29,7 @@ class SearchDialog extends StatelessWidget {
               ),
               // pega o texto digitado
               onFieldSubmitted: (text) {
-                Navigator.of(context).pop(text.trim().toString());
+                Navigator.of(context).pop(text.trim());
               },
             ),
           ),

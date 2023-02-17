@@ -21,6 +21,16 @@ class ProductsScreen extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.search),
+
+            // do professor - error
+            /*onPressed: () async {
+              final search = await showDialog<String>(context: context,
+                  builder: (_) => SearchDialog());
+              if(search != null){
+                context.read<ProductManager>().search = search;
+              }
+            },*/
+
             onPressed: () async {
               final search = showDialog(
                 context: context,
