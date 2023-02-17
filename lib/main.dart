@@ -41,7 +41,6 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(elevation: 0),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        // home: BaseScreen(),
         initialRoute: '/base',
         onGenerateRoute: (settings) {
           switch (settings.name) {
