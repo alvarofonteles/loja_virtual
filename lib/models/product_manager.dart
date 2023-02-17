@@ -1,26 +1,33 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:loja_virtual/models/product.dart';
 
-class ProductManager {
+class ProductManager extends ChangeNotifier {
   ProductManager() {
     _loadAllProducts();
   }
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
+  List<Product>? allProducts = [];
+
   Future<void> _loadAllProducts() async {
     final QuerySnapshot snapProducts =
         await firestore.collection('products').get();
 
-    for (DocumentSnapshot doc in snapProducts.docs) {
-      // mostar toda lista '${doc.data}'
-      debugPrint('UID: ${doc.id} - Produtos: ${doc.data}');
-    }
+    allProducts =
+        snapProducts.docs.map((e) => Product.fromDocment(e)).toList();
+
+    notifyListeners();
 
     // anotherExamples(firestore);
   }
 }
 
+
+
+
+/*
 // mais exemplos
 void anotherExamples(FirebaseFirestore firestore) {
   // altera
@@ -38,3 +45,4 @@ void anotherExamples(FirebaseFirestore firestore) {
     }
   });
 }
+*/

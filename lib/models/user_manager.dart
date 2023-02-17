@@ -25,6 +25,7 @@ class UserManager extends ChangeNotifier {
       required Function onSucess}) async {
     loading = true;
     try {
+      // recupera os dados do usuario na autenticação
       final user_auth.UserCredential result =
           await auth.signInWithEmailAndPassword(
               email: user.email!, password: user.password!);
@@ -47,6 +48,7 @@ class UserManager extends ChangeNotifier {
       required Function onSucess}) async {
     loading = true;
     try {
+      // salva na autenticação os usuarios
       final user_auth.UserCredential result =
           await auth.createUserWithEmailAndPassword(
               email: user.email!, password: user.password!);
@@ -55,6 +57,7 @@ class UserManager extends ChangeNotifier {
       this.user = user;
 
       // aguarda ser concluido (await)
+      // salva os dados do usuario no firestore
       await user.saveData();
 
       onSucess();

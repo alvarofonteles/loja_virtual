@@ -115,20 +115,22 @@ class SignUpScreen extends StatelessWidget {
                               );
                               return;
                             }
-                            context.read<UserManager>().signUp(
-                                  user: user,
-                                  onSucess: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  onFail: (e) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text('Falha ao cadastrar: $e'),
-                                        backgroundColor: Colors.red,
-                                      ),
-                                    );
-                                  },
+                            // context.read<UserManager>()
+                            // usando o consumidor
+                            userManager.signUp(
+                              user: user,
+                              onSucess: () {
+                                Navigator.of(context).pop();
+                              },
+                              onFail: (e) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text('Falha ao cadastrar: $e'),
+                                    backgroundColor: Colors.red,
+                                  ),
                                 );
+                              },
+                            );
                           }
                         },
                         style: TextButton.styleFrom(
