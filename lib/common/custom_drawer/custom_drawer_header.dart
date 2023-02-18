@@ -17,7 +17,7 @@ class CustomDrawerHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               const Text(
-                'Loja do\nFco Willian Alves',
+                'Loja de\nBazar do Alfarr',
                 // quebra de linha para nomes grandes
                 overflow: TextOverflow.ellipsis,
                 maxLines: 3,

@@ -43,7 +43,7 @@ class ProductsScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                         ),
-                        onTap: () async {
+                        onTap: () {
                           searchDialog(productManager, context);
                         },
                       );
@@ -58,7 +58,7 @@ class ProductsScreen extends StatelessWidget {
               return productManager.search.isEmpty
                   ? IconButton(
                       icon: const Icon(Icons.search),
-                      onPressed: () async {
+                      onPressed: () {
                         searchDialog(productManager, context);
                       },
                     )
