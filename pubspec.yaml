@@ -40,9 +40,7 @@ dependencies:
   firebase_storage: ^11.0.10
   firebase_core: ^2.4.1
   provider: ^6.0.5
-  activout_firebase_options_selector: ^1.0.0
   email_validator: ^2.1.16
-  firebase_auth_oauth: ^1.2.2
 
 dev_dependencies:
   flutter_test:
