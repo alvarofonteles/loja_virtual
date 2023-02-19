@@ -20,7 +20,8 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^2.19.0-146.2.beta
+  # versão do Dart 
+  sdk: '>=2.19.0-146.2.beta <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -42,6 +43,7 @@ dependencies:
   firebase_core: ^2.4.1
   provider: ^6.0.5
   email_validator: ^2.1.16
+  carousel_pro: ^1.0.0
 
 dev_dependencies:
   flutter_test:

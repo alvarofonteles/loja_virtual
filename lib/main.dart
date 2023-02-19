@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:loja_virtual/models/product.dart';
 import 'package:loja_virtual/models/product_manager.dart';
 import 'package:loja_virtual/models/user_manager.dart';
 import 'package:loja_virtual/screens/base/base_screen.dart';
 import 'package:loja_virtual/screens/login/login_screen.dart';
+import 'package:loja_virtual/screens/product/product_screen.dart';
 import 'package:loja_virtual/screens/signup/signup_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         initialRoute: '/base',
+        // 'settings' - recebe os argumentos
         onGenerateRoute: (settings) {
           switch (settings.name) {
             case '/login':
@@ -51,6 +54,12 @@ class MyApp extends StatelessWidget {
             case '/signup':
               return MaterialPageRoute(
                 builder: (_) => SignUpScreen(),
+              );
+            case '/product':
+              return MaterialPageRoute(
+                builder: (_) => ProductScreen(
+                  settings.arguments as Product,
+                ),
               );
             case '/base':
             default:
