@@ -33,20 +33,24 @@ class ProductsScreen extends StatelessWidget {
           builder: (_, productManager, __) {
             return LayoutBuilder(
               builder: (_, constraints) {
-                return productManager.search.isEmpty
-                    ? const Text('Produtos')
-                    : GestureDetector(
-                        child: SizedBox(
-                          width: constraints.biggest.width,
-                          child: Text(
-                            productManager.search,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        onTap: () {
-                          searchDialog(productManager, context);
-                        },
-                      );
+                // ignore: unnecessary_null_comparison
+                if (productManager.search == null ||
+                    productManager.search.isEmpty) {
+                  return const Text('Produtos');
+                } else {
+                  return GestureDetector(
+                    child: SizedBox(
+                      width: constraints.biggest.width,
+                      child: Text(
+                        productManager.search,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    onTap: () {
+                      searchDialog(productManager, context);
+                    },
+                  );
+                }
               },
             );
           },
@@ -55,19 +59,23 @@ class ProductsScreen extends StatelessWidget {
         actions: <Widget>[
           Consumer<ProductManager>(
             builder: (_, productManager, __) {
-              return productManager.search.isEmpty
-                  ? IconButton(
-                      icon: const Icon(Icons.search),
-                      onPressed: () {
-                        searchDialog(productManager, context);
-                      },
-                    )
-                  : IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () {
-                        productManager.search = '';
-                      },
-                    );
+              // ignore: unnecessary_null_comparison
+              if (productManager.search == null ||
+                  productManager.search.isEmpty) {
+                return IconButton(
+                  icon: const Icon(Icons.search),
+                  onPressed: () {
+                    searchDialog(productManager, context);
+                  },
+                );
+              } else {
+                return IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () {
+                    productManager.search = '';
+                  },
+                );
+              }
             },
           ),
         ],
