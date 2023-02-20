@@ -33,16 +33,15 @@ class ProductsScreen extends StatelessWidget {
           builder: (_, productManager, __) {
             return LayoutBuilder(
               builder: (_, constraints) {
-                // ignore: unnecessary_null_comparison
                 if (productManager.search == null ||
-                    productManager.search.isEmpty) {
+                    productManager.search!.isEmpty) {
                   return const Text('Produtos');
                 } else {
                   return GestureDetector(
                     child: SizedBox(
                       width: constraints.biggest.width,
                       child: Text(
-                        productManager.search,
+                        productManager.search!,
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -59,9 +58,8 @@ class ProductsScreen extends StatelessWidget {
         actions: <Widget>[
           Consumer<ProductManager>(
             builder: (_, productManager, __) {
-              // ignore: unnecessary_null_comparison
               if (productManager.search == null ||
-                  productManager.search.isEmpty) {
+                  productManager.search!.isEmpty) {
                 return IconButton(
                   icon: const Icon(Icons.search),
                   onPressed: () {

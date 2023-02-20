@@ -29,7 +29,7 @@ class ProductScreen extends StatelessWidget {
               dotBgColor: Colors.transparent,
               dotColor: colorPrimary,
               // passa sozinho - true
-              autoplay: true,
+              autoplay: false,
             ),
           ),
           Padding(

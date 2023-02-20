@@ -12,10 +12,10 @@ class ProductManager extends ChangeNotifier {
   List<Product>? allProducts = [];
 
   // pesquisa produtos
-  String _search = '';
+  String? _search;
 
-  String get search => _search;
-  set search(String value) {
+  String? get search => _search;
+  set search(String? value) {
     _search = value;
     notifyListeners();
   }
@@ -24,13 +24,12 @@ class ProductManager extends ChangeNotifier {
   List<Product> get filteredProducts {
     final List<Product> filteredProducts = [];
 
-    // ignore: unnecessary_null_comparison
-    if (search == null || search.isEmpty) {
+    if (search == null || search!.isEmpty) {
       filteredProducts.addAll(allProducts!);
     } else {
       filteredProducts.addAll(
         allProducts!.where(
-          (p) => p.name!.toLowerCase().contains(search.toLowerCase()),
+          (p) => p.name!.toLowerCase().contains(search!.toLowerCase()),
         ),
       );
     }
