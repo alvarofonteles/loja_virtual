@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_virtual/models/cart_manager.dart';
 import 'package:loja_virtual/models/product.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:carousel_pro/carousel_pro.dart';
@@ -116,7 +117,9 @@ class ProductScreen extends StatelessWidget {
                             onPressed: product.selectedSize != null
                                 ? () {
                                     userManager.isLoggedIn
-                                        ? null // TODO: ADICIONAR AO CARRINHO
+                                        ? context
+                                            .read<CartManager>()
+                                            .addToCart(product)
                                         : Navigator.of(context)
                                             .pushNamed('/login');
                                   }

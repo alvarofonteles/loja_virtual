@@ -4,7 +4,7 @@ import 'package:loja_virtual/models/item_size.dart';
 
 class Product extends ChangeNotifier {
   Product.fromDocment(DocumentSnapshot document) {
-    id = document.id;
+    pid = document.id;
     name = document.get('name');
     description = document.get('description');
     images = List<String>.from(document.get('images'));
@@ -17,7 +17,7 @@ class Product extends ChangeNotifier {
     minPrice = sizes!.map((e) => e.price!).lastWhere((p) => p < 20);
   }
 
-  String? id;
+  String? pid;
   String? name;
   String? description;
   List<String>? images;

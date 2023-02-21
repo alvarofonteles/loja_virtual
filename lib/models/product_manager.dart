@@ -9,7 +9,7 @@ class ProductManager extends ChangeNotifier {
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  List<Product>? allProducts = [];
+  List<Product> allProducts = [];
 
   // pesquisa produtos
   String? _search;
@@ -25,10 +25,10 @@ class ProductManager extends ChangeNotifier {
     final List<Product> filteredProducts = [];
 
     if (search == null || search!.isEmpty) {
-      filteredProducts.addAll(allProducts!);
+      filteredProducts.addAll(allProducts);
     } else {
       filteredProducts.addAll(
-        allProducts!.where(
+        allProducts.where(
           (p) => p.name!.toLowerCase().contains(search!.toLowerCase()),
         ),
       );
