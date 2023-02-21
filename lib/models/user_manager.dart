@@ -81,7 +81,7 @@ class UserManager extends ChangeNotifier {
 
   Future<void> _loadingCurrentUser({user_auth.User? userCredential}) async {
     user_auth.User currentUser = userCredential ?? auth.currentUser!;
-    if (auth.currentUser != null) {
+    if (currentUser.toString().isNotEmpty) {
       final DocumentSnapshot docUser =
           await firestore.doc('users/${currentUser.uid}').get();
       user = User.fromDocument(docUser);
