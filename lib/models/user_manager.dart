@@ -5,11 +5,12 @@ import 'package:loja_virtual/models/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserManager extends ChangeNotifier {
+  final user_auth.FirebaseAuth auth = user_auth.FirebaseAuth.instance;
+
   UserManager() {
-    _loadingCurrentUser();
+    if (auth.currentUser != null) _loadingCurrentUser();
   }
 
-  final user_auth.FirebaseAuth auth = user_auth.FirebaseAuth.instance;
   User? user;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
@@ -80,7 +81,7 @@ class UserManager extends ChangeNotifier {
 
   Future<void> _loadingCurrentUser({user_auth.User? userCredential}) async {
     user_auth.User currentUser = userCredential ?? auth.currentUser!;
-    if (currentUser.toString().isNotEmpty) {
+    if (auth.currentUser != null) {
       final DocumentSnapshot docUser =
           await firestore.doc('users/${currentUser.uid}').get();
       user = User.fromDocument(docUser);
