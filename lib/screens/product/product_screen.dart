@@ -116,12 +116,14 @@ class ProductScreen extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: product.selectedSize != null
                                 ? () {
-                                    userManager.isLoggedIn
-                                        ? context
-                                            .read<CartManager>()
-                                            .addToCart(product)
-                                        : Navigator.of(context)
-                                            .pushNamed('/login');
+                                    if (userManager.isLoggedIn) {
+                                      context
+                                          .read<CartManager>()
+                                          .addToCart(product);
+                                      Navigator.of(context).pushNamed('/cart');
+                                    } else {
+                                      Navigator.of(context).pushNamed('/login');
+                                    }
                                   }
                                 : null,
                             style: TextButton.styleFrom(
