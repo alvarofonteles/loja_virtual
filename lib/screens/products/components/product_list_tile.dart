@@ -52,7 +52,7 @@ class ProductListTile extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'R\$ 19.99',
+                      'R\$ ${product.minPrice}',
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w800,
