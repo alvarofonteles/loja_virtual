@@ -3,12 +3,14 @@ import 'package:loja_virtual/models/item_size.dart';
 import 'package:loja_virtual/models/product.dart';
 
 class CartProduct {
+  // quantidade de produtos/item que vai ser adicionado
   CartProduct.fromProduct(this.product) {
     pid = product!.pid;
     quantity = 1;
     size = product!.selectedSize!.name;
   }
 
+  // quantidade de produtos/item que está no firebase
   CartProduct.fromDocument(DocumentSnapshot document) {
     pid = document.get('pid');
     quantity = document.get('quantity');
@@ -36,5 +38,13 @@ class CartProduct {
   num get unitPrice {
     if (product.toString().isEmpty) return 0;
     return itemSize!.price ?? 0;
+  }
+
+  Map<String, dynamic> toCartItemsMap() {
+    return {'pid': pid, 'quantity': quantity, 'size': size};
+  }
+
+  bool stackable(Product product) {
+    return product.pid == pid && product.selectedSize!.name == size;
   }
 }
