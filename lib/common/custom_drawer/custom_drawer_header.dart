@@ -20,7 +20,7 @@ class CustomDrawerHeader extends StatelessWidget {
                 'Loja de\nBazar do Alfarr',
                 // quebra de linha para nomes grandes
                 overflow: TextOverflow.ellipsis,
-                maxLines: 3,
+                maxLines: 2,
                 style: TextStyle(
                   fontSize: 34,
                   fontWeight: FontWeight.bold,
@@ -29,7 +29,7 @@ class CustomDrawerHeader extends StatelessWidget {
               Text(
                 'Olá, ${userManager.user?.name ?? ''}',
                 overflow: TextOverflow.ellipsis,
-                maxLines: 3,
+                maxLines: 2,
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
