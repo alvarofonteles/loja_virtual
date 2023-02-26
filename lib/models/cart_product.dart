@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/item_size.dart';
 import 'package:loja_virtual/models/product.dart';
 
-class CartProduct {
+class CartProduct extends ChangeNotifier {
   // quantidade de produtos/item que vai ser adicionado
   CartProduct.fromProduct(this.product) {
     pid = product!.pid;
@@ -12,6 +13,8 @@ class CartProduct {
 
   // quantidade de produtos/item que está no firebase
   CartProduct.fromDocument(DocumentSnapshot document) {
+    id = document.id;
+
     pid = document.get('pid');
     quantity = document.get('quantity');
     size = document.get('size');
@@ -23,6 +26,8 @@ class CartProduct {
   }
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
+  // uid do card
+  String? id;
 
   String? pid;
   int? quantity;
@@ -46,5 +51,15 @@ class CartProduct {
 
   bool stackable(Product product) {
     return product.pid == pid && product.selectedSize!.name == size;
+  }
+
+  void increment() {
+    quantity = quantity! + 1;
+    notifyListeners();
+  }
+
+  void decrement() {
+    quantity = quantity! - 1;
+    notifyListeners();
   }
 }
