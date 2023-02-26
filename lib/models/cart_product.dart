@@ -45,6 +45,9 @@ class CartProduct extends ChangeNotifier {
     return itemSize!.price ?? 0;
   }
 
+  // calcula o valor do produto total por quantidade
+  num get totalPrice => unitPrice * quantity!;
+
   Map<String, dynamic> toCartItemsMap() {
     return {'pid': pid, 'quantity': quantity, 'size': size};
   }
@@ -61,5 +64,13 @@ class CartProduct extends ChangeNotifier {
   void decrement() {
     quantity = quantity! - 1;
     notifyListeners();
+  }
+
+  // checa se tem tamanho no estoque
+  //    e se tem estoque
+  bool get hasStock {
+    final size = itemSize;
+    if (size == null) return false;
+    return size.stock! >= quantity!;
   }
 }
