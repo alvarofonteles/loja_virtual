@@ -19,10 +19,10 @@ class CartProduct extends ChangeNotifier {
     quantity = document.get('quantity');
     size = document.get('size');
 
-    firestore
-        .doc('products/$pid')
-        .get()
-        .then((doc) => product = Product.fromDocment(doc));
+    firestore.doc('products/$pid').get().then((doc) {
+      product = Product.fromDocment(doc);
+      notifyListeners();
+    });
   }
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -41,7 +41,7 @@ class CartProduct extends ChangeNotifier {
   }
 
   num get unitPrice {
-    if (product.toString().isEmpty) return 0;
+    if (product == null) return 0;
     return itemSize!.price ?? 0;
   }
 

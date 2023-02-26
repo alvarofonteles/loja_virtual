@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Loja de Bazar do Alfarr',
+        title: 'Loja de Bazar da Lorena',
         // remove o banner de debug
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

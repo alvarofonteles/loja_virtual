@@ -69,6 +69,7 @@ class CartManager extends ChangeNotifier {
 
       _updateCartProduct(cartProduct);
     }
+    notifyListeners();
   }
 
   // atualizado os item do carrrinho

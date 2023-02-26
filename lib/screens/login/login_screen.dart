@@ -125,7 +125,7 @@ class LoginSreen extends StatelessWidget {
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 16,
                         ),
                         backgroundColor: colorPrimary,
                         disabledBackgroundColor: colorDisabled,

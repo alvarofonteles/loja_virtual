@@ -17,7 +17,7 @@ class CustomDrawerHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               const Text(
-                'Loja de\nBazar do Alfarr',
+                'Loja de\nBazar da Lorena',
                 // quebra de linha para nomes grandes
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
@@ -27,7 +27,7 @@ class CustomDrawerHeader extends StatelessWidget {
                 ),
               ),
               Text(
-                'Olá, ${userManager.user?.name ?? 'cliente!'}',
+                'Olá, ${userManager.user?.name ?? 'seja nosso cliente!'}',
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 style: const TextStyle(
@@ -44,7 +44,7 @@ class CustomDrawerHeader extends StatelessWidget {
                   }
                 },
                 child: Text(
-                  userManager.isLoggedIn ? 'Sair' : 'Entre ou cadastre-se >',
+                  userManager.isLoggedIn ? 'Sair' : 'Entre ou Cadastre-se.',
                   style: TextStyle(
                     color: Theme.of(context).primaryColor,
                     fontSize: 16,
