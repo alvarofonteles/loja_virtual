@@ -22,7 +22,7 @@ class CustomDrawerHeader extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 style: TextStyle(
-                  fontSize: 34,
+                  fontSize: 26,
                   fontWeight: FontWeight.bold,
                 ),
               ),
