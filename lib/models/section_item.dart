@@ -1,6 +1,7 @@
 class SectionItem {
   SectionItem.fromMap(Map<String, dynamic> map) {
     image = map['image'] as String;
+    product = map['product'];
   }
 
   String? image;
@@ -8,6 +9,6 @@ class SectionItem {
 
   /*@override
   String toString() {
-    return '\nImege: $image';
+    return '\nImege: $image - Produto: $product';
   }*/
 }
