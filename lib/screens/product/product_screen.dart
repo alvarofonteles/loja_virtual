@@ -14,7 +14,7 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color colorPrimary = Theme.of(context).primaryColor;
+    final Color primaryColor = Theme.of(context).primaryColor;
     final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
 
     // '.value' - passa o produto que já existe
@@ -36,7 +36,7 @@ class ProductScreen extends StatelessWidget {
                 dotSize: 4,
                 dotSpacing: 15,
                 dotBgColor: Colors.transparent,
-                dotColor: colorPrimary,
+                dotColor: primaryColor,
                 // passa sozinho - true
                 autoplay: false,
               ),
@@ -68,7 +68,7 @@ class ProductScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: colorPrimary,
+                      color: primaryColor,
                     ),
                   ),
                   const Padding(
@@ -129,7 +129,7 @@ class ProductScreen extends StatelessWidget {
                                 color: Colors.white,
                                 fontSize: 18,
                               ),
-                              backgroundColor: colorPrimary,
+                              backgroundColor: primaryColor,
                               disabledBackgroundColor: colorDisabled,
                             ),
                             child: userManager.loading

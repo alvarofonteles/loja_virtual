@@ -14,7 +14,7 @@ class LoginSreen extends StatelessWidget {
     TextEditingController passController = TextEditingController();
 
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    final Color colorPrimary = Theme.of(context).primaryColor;
+    final Color primaryColor = Theme.of(context).primaryColor;
     final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
 
     // substituimos por ScaffoldMessenger
@@ -126,7 +126,7 @@ class LoginSreen extends StatelessWidget {
                           color: Colors.white,
                           fontSize: 16,
                         ),
-                        backgroundColor: colorPrimary,
+                        backgroundColor: primaryColor,
                         disabledBackgroundColor: colorDisabled,
                       ),
                       child: userManager.loading

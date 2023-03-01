@@ -8,7 +8,7 @@ class ProductListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color colorPrimary = Theme.of(context).primaryColor;
+    final Color primaryColor = Theme.of(context).primaryColor;
     return GestureDetector(
       onTap: () {
         Navigator.of(context).pushNamed('/product', arguments: product);
@@ -56,7 +56,7 @@ class ProductListTile extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w800,
-                        color: colorPrimary,
+                        color: primaryColor,
                       ),
                     )
                   ],

@@ -14,13 +14,13 @@ class SizeWidget extends StatelessWidget {
     final selected = size == product.selectedSize;
     bool hasStock = size!.hasStock;
 
-    final Color colorPrimary = Theme.of(context).primaryColor;
+    final Color primaryColor = Theme.of(context).primaryColor;
     final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
     Color color;
     if (!hasStock) {
       color = Colors.red.withAlpha(50);
     } else if (selected) {
-      color = colorPrimary;
+      color = primaryColor;
     } else {
       color = colorDisabled;
     }

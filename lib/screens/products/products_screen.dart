@@ -11,7 +11,7 @@ class ProductsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color colorPrimary = Theme.of(context).primaryColor;
+    final Color primaryColor = Theme.of(context).primaryColor;
 
     void searchDialog(
         ProductManager productManager, BuildContext context) async {
@@ -92,7 +92,7 @@ class ProductsScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
-        foregroundColor: colorPrimary,
+        foregroundColor: primaryColor,
         onPressed: () {
           Navigator.of(context).pushNamed('/cart');
         },

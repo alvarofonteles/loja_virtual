@@ -10,7 +10,7 @@ class CartTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color colorPrimary = Theme.of(context).primaryColor;
+    final Color primaryColor = Theme.of(context).primaryColor;
     final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(500);
 
     return ChangeNotifierProvider.value(
@@ -55,7 +55,7 @@ class CartTile extends StatelessWidget {
                             return Text(
                               'R\$ ${cartProduct.unitPrice.toStringAsFixed(2)}',
                               style: TextStyle(
-                                color: colorPrimary,
+                                color: primaryColor,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -83,7 +83,7 @@ class CartTile extends StatelessWidget {
                   children: <Widget>[
                     CustomIconButton(
                       iconData: Icons.add,
-                      color: colorPrimary,
+                      color: primaryColor,
                       onTap: cartProduct.increment,
                     ),
                     Text(
@@ -94,7 +94,7 @@ class CartTile extends StatelessWidget {
                     CustomIconButton(
                       iconData: Icons.remove,
                       color:
-                          cartProduct.quantity! > 1 ? colorPrimary : Colors.red,
+                          cartProduct.quantity! > 1 ? primaryColor : Colors.red,
                       onTap: cartProduct.decrement,
                     )
                   ],

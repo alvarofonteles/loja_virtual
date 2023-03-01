@@ -13,7 +13,7 @@ class PriceCard extends StatelessWidget {
     final cartManager = context.watch<CartManager>();
     final productsPrice = cartManager.productsPrice.toStringAsFixed(2);
 
-    final Color colorPrimary = Theme.of(context).primaryColor;
+    final Color primaryColor = Theme.of(context).primaryColor;
     final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
 
     return Card(
@@ -53,7 +53,7 @@ class PriceCard extends StatelessWidget {
                 Text(
                   'R\$ $productsPrice',
                   style: TextStyle(
-                    color: colorPrimary,
+                    color: primaryColor,
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
                   ),
@@ -67,7 +67,7 @@ class PriceCard extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 16,
                 ),
-                backgroundColor: colorPrimary,
+                backgroundColor: primaryColor,
                 disabledBackgroundColor: colorDisabled,
               ),
               onPressed: onPressed,
