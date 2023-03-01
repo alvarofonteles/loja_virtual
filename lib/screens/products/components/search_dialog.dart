@@ -7,6 +7,7 @@ class SearchDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
     // trabalha melhor com alinhamento
     return Stack(
       children: <Widget>[
@@ -27,7 +28,7 @@ class SearchDialog extends StatelessWidget {
                     Navigator.of(context).pop();
                   },
                   icon: const Icon(Icons.arrow_back),
-                  color: Colors.grey.shade700,
+                  color: colorDisabled,
                 ),
               ),
               // pega o texto digitado

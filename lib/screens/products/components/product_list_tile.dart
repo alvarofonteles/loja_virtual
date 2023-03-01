@@ -46,7 +46,7 @@ class ProductListTile extends StatelessWidget {
                       child: Text(
                         'A partir de',
                         style: TextStyle(
-                          color: Colors.grey[400],
+                          color: Colors.grey[700],
                           fontSize: 12,
                         ),
                       ),

@@ -9,11 +9,9 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color colorPrimary = Theme.of(context).primaryColor;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Carrinho'),
-        backgroundColor: colorPrimary,
         centerTitle: true,
       ),
       body: Consumer<CartManager>(

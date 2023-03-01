@@ -15,15 +15,13 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color colorPrimary = Theme.of(context).primaryColor;
-    final Color colorDisabled = Colors.grey.shade600;
-    //Theme.of(context).primaryColor.withAlpha(100);
+    final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
 
     // '.value' - passa o produto que já existe
     return ChangeNotifierProvider.value(
       value: product,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: colorPrimary,
           title: Text(product.name!),
           centerTitle: true,
         ),
@@ -60,7 +58,7 @@ class ProductScreen extends StatelessWidget {
                     child: Text(
                       'A partir de',
                       style: TextStyle(
-                        color: Colors.grey[600],
+                        color: Colors.grey[700],
                         fontSize: 13,
                       ),
                     ),

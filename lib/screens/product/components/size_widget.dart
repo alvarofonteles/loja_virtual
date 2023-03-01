@@ -15,13 +15,14 @@ class SizeWidget extends StatelessWidget {
     bool hasStock = size!.hasStock;
 
     final Color colorPrimary = Theme.of(context).primaryColor;
+    final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
     Color color;
     if (!hasStock) {
       color = Colors.red.withAlpha(50);
     } else if (selected) {
       color = colorPrimary;
     } else {
-      color = Colors.grey.shade600;
+      color = colorDisabled;
     }
 
     return GestureDetector(

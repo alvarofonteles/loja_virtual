@@ -25,6 +25,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // Color colorPrimary = const Color.fromARGB(255, 4, 125, 141);
+    Color colorPrimary = const Color.fromARGB(255, 175, 5, 125);
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -52,9 +55,12 @@ class MyApp extends StatelessWidget {
         // remove o banner de debug
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primaryColor: const Color.fromARGB(255, 4, 125, 141),
-          scaffoldBackgroundColor: const Color.fromARGB(255, 4, 125, 141),
-          appBarTheme: const AppBarTheme(elevation: 0),
+          primaryColor: colorPrimary,
+          scaffoldBackgroundColor: colorPrimary,
+          appBarTheme: AppBarTheme(
+            elevation: 0,
+            backgroundColor: colorPrimary,
+          ),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         initialRoute: '/base',

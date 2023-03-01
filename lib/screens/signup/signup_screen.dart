@@ -14,9 +14,9 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color colorPrimary = Theme.of(context).primaryColor;
     final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: colorPrimary,
         title: const Text('Criar conta'),
         centerTitle: true,
       ),

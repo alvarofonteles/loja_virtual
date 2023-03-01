@@ -11,6 +11,8 @@ class CartTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color colorPrimary = Theme.of(context).primaryColor;
+    final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(500);
+
     return ChangeNotifierProvider.value(
       value: cartProduct,
       child: Card(
@@ -62,10 +64,10 @@ class CartTile extends StatelessWidget {
                               // 'R\$ ${cartProduct.itemSize!.price!.toStringAsFixed(2)}',
                             );
                           } else {
-                            return const Text(
+                            return Text(
                               'Sem estoque suficiente',
                               style: TextStyle(
-                                color: Colors.red,
+                                color: colorDisabled,
                                 fontSize: 12,
                               ),
                             );

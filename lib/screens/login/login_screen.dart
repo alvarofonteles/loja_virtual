@@ -23,7 +23,6 @@ class LoginSreen extends StatelessWidget {
     return Scaffold(
       // key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: colorPrimary,
         title: const Text('Entrar'),
         centerTitle: true,
         actions: <Widget>[

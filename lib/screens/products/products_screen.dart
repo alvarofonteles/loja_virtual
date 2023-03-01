@@ -28,7 +28,6 @@ class ProductsScreen extends StatelessWidget {
     return Scaffold(
       drawer: const CustomDrawer(),
       appBar: AppBar(
-        backgroundColor: colorPrimary,
         title: Consumer<ProductManager>(
           builder: (_, productManager, __) {
             return LayoutBuilder(
