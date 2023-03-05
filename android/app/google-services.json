@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "763247699493",
-    "project_id": "loja-virtual-udemy-daniel",
-    "storage_bucket": "loja-virtual-udemy-daniel.appspot.com"
+    "project_number": "250837062841",
+    "project_id": "loja-de-bazar-da-lorena",
+    "storage_bucket": "loja-de-bazar-da-lorena.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:763247699493:android:4b8a716bf64ec4da3c01cc",
+        "mobilesdk_app_id": "1:250837062841:android:b7ceb82039795ca7597768",
         "android_client_info": {
           "package_name": "br.com.daniel.udemy.lojavirtual.loja_virtual"
         }
       },
       "oauth_client": [
         {
-          "client_id": "763247699493-8o70c7fe452jths67u0kkq1j8cncvf6u.apps.googleusercontent.com",
+          "client_id": "250837062841-j6ohqm1d4vfc42v9sm3tac9dnism4lu5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB-N7HPSjQZ4UrkhstSBaWb5656WVt8Wmk"
+          "current_key": "AIzaSyBa9KisFEaflL7S4kY1FCRXP5lyioqMvbU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "763247699493-8o70c7fe452jths67u0kkq1j8cncvf6u.apps.googleusercontent.com",
+              "client_id": "250837062841-j6ohqm1d4vfc42v9sm3tac9dnism4lu5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
