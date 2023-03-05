@@ -23,6 +23,8 @@ class User {
 
   String? confirmPassword;
 
+  bool admin = false;
+
   // 3ª opcao com reference
   DocumentReference get firestoreRef =>
       FirebaseFirestore.instance.doc('users/$id');

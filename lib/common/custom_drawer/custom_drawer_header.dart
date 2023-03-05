@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_virtual/models/page_manager.dart';
 import 'package:loja_virtual/models/user_manager.dart';
 import 'package:provider/provider.dart';
 
@@ -38,6 +39,9 @@ class CustomDrawerHeader extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   if (userManager.isLoggedIn) {
+                    // força a pág. home/inicio quando sair de admin
+                    context.read<PageManager>().setPage(0);
+
                     userManager.signOut();
                   } else {
                     Navigator.of(context).pushNamed('/login');
