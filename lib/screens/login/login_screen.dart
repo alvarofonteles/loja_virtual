@@ -15,7 +15,7 @@ class LoginSreen extends StatelessWidget {
 
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     final Color primaryColor = Theme.of(context).primaryColor;
-    final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
+    final Color colorDisabled = primaryColor.withAlpha(100);
 
     // substituimos por ScaffoldMessenger
     // final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();

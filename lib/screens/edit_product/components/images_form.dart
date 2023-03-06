@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/product.dart';
+import 'package:loja_virtual/screens/edit_product/components/image_source_sheet.dart';
 
 class ImagesForm extends StatelessWidget {
   const ImagesForm(this.product, {super.key});
@@ -13,7 +14,6 @@ class ImagesForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color primaryColor = Theme.of(context).primaryColor;
-    final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
 
     return FormField<List>(
       initialValue: product.images,
@@ -21,7 +21,7 @@ class ImagesForm extends StatelessWidget {
         return AspectRatio(
           aspectRatio: 1,
           child: Carousel(
-            images: state.value!.map((image) {
+            images: state.value!.map<Widget>((image) {
               return Stack(
                 // 'fit' substitue o alignment, junto com o BoxFit
                 fit: StackFit.expand,
@@ -47,13 +47,29 @@ class ImagesForm extends StatelessWidget {
                         // avisa da mundaça no form, assim refaz o state
                         state.didChange(state.value);
                       },
-                      color: Colors.red,
+                      color: primaryColor,
                       icon: const Icon(Icons.remove_circle_outline),
                     ),
                   ),
                 ],
               );
-            }).toList(),
+            }).toList()
+              ..add(Material(
+                color: primaryColor.withBlue(500),
+                child: IconButton(
+                  color: Colors.white,
+                  iconSize: 50,
+                  onPressed: () {
+                    // padrão janela android
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (_) => const ImageSourceSheet(),
+                    );
+                    // padrão janela iOS
+                  },
+                  icon: const Icon(Icons.add_a_photo),
+                ),
+              )),
             dotSize: 4,
             dotSpacing: 15,
             dotBgColor: Colors.transparent,

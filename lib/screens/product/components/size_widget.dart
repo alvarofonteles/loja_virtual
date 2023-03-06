@@ -15,7 +15,7 @@ class SizeWidget extends StatelessWidget {
     bool hasStock = size!.hasStock;
 
     final Color primaryColor = Theme.of(context).primaryColor;
-    final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
+    final Color colorDisabled = primaryColor.withAlpha(100);
     Color color;
     if (!hasStock) {
       color = Colors.red.withAlpha(50);

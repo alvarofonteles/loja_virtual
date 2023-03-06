@@ -14,7 +14,7 @@ class PriceCard extends StatelessWidget {
     final productsPrice = cartManager.productsPrice.toStringAsFixed(2);
 
     final Color primaryColor = Theme.of(context).primaryColor;
-    final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
+    final Color colorDisabled = primaryColor.withAlpha(100);
 
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),

@@ -15,7 +15,7 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color primaryColor = Theme.of(context).primaryColor;
-    final Color colorDisabled = Theme.of(context).primaryColor.withAlpha(100);
+    final Color colorDisabled = primaryColor.withAlpha(100);
 
     // '.value' - passa o produto que já existe
     return ChangeNotifierProvider.value(
