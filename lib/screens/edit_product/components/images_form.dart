@@ -2,6 +2,7 @@
 import 'dart:io';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/models/product.dart';
 import 'package:loja_virtual/screens/edit_product/components/image_source_sheet.dart';
@@ -16,8 +17,16 @@ class ImagesForm extends StatelessWidget {
     final Color primaryColor = Theme.of(context).primaryColor;
 
     return FormField<List>(
-      initialValue: product.images,
+      // corrigido para lista dinamica
+      initialValue: List<dynamic>.from(product.images!),
       builder: (state) {
+        void onImageSelected(File file) {
+          state.value!.add(file);
+
+          state.didChange(state.value);
+          Navigator.of(context).pop();
+        }
+
         return AspectRatio(
           aspectRatio: 1,
           child: Carousel(
@@ -33,8 +42,6 @@ class ImagesForm extends StatelessWidget {
                       fit: BoxFit.cover,
                     )
                   else
-                    // TODO: cast File
-                    // Image.file(image as File),
                     Image.file(
                       image,
                       fit: BoxFit.cover,
@@ -60,12 +67,23 @@ class ImagesForm extends StatelessWidget {
                   color: Colors.white,
                   iconSize: 50,
                   onPressed: () {
-                    // padrão janela android
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (_) => const ImageSourceSheet(),
-                    );
-                    // padrão janela iOS
+                    if (Platform.isAndroid) {
+                      // padrão janela android
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (_) => ImageSourceSheet(
+                          onImageSelected: onImageSelected,
+                        ),
+                      );
+                    } else {
+                      // padrão janela iOS
+                      showCupertinoModalPopup(
+                        context: context,
+                        builder: (_) => ImageSourceSheet(
+                          onImageSelected: onImageSelected,
+                        ),
+                      );
+                    }
                   },
                   icon: const Icon(Icons.add_a_photo),
                 ),
