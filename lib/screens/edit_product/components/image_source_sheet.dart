@@ -69,13 +69,23 @@ class ImageSourceSheet extends StatelessWidget {
         title: const Text('Selecione uma Imagem'),
         message: const Text('Escolha o Local'),
         actions: <Widget>[
+          // câmera iOS
           CupertinoActionSheetAction(
             isDefaultAction: true,
-            onPressed: () {},
+            onPressed: () async {
+              final XFile? file =
+                  await _picker.pickImage(source: ImageSource.camera);
+              onImageSelected!(File(file!.path));
+            },
             child: const Text('Câmera'),
           ),
+          // galeria iOS
           CupertinoActionSheetAction(
-            onPressed: () {},
+            onPressed: () async {
+              final XFile? file =
+                  await _picker.pickImage(source: ImageSource.gallery);
+              onImageSelected!(File(file!.path));
+            },
             child: const Text('Galeria'),
           ),
         ],
