@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
               gradient: LinearGradient(
                 colors: [
                   primaryColor,
-                  primaryColor.withBlue(500),
+                  primaryColor.withBlue(400),
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,

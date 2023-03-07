@@ -65,7 +65,7 @@ class PriceCard extends StatelessWidget {
               style: TextButton.styleFrom(
                 textStyle: const TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: 18,
                 ),
                 backgroundColor: primaryColor,
                 disabledBackgroundColor: colorDisabled,

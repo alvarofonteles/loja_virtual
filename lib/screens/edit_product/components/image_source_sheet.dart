@@ -47,16 +47,15 @@ class ImageSourceSheet extends StatelessWidget {
         onClosing: () {},
         builder: (_) => Column(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             // câmera
             ElevatedButton(
               autofocus: true,
               style: TextButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 80),
                 textStyle: const TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
                 backgroundColor: primaryColor,
@@ -72,10 +71,10 @@ class ImageSourceSheet extends StatelessWidget {
             // galeria
             ElevatedButton(
               style: TextButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 80),
+                padding: const EdgeInsets.symmetric(horizontal: 110),
                 textStyle: const TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: 18,
                 ),
                 backgroundColor: primaryColor,
               ),
