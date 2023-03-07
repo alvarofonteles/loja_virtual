@@ -49,6 +49,7 @@ dependencies:
   alphabet_list_scroll_view: ^2.0.0
   faker: ^2.1.0
   image_picker: ^0.8.6+4
+  image_cropper: ^3.0.1
 
 
 dev_dependencies:
