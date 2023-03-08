@@ -12,16 +12,12 @@ class Product extends ChangeNotifier {
     sizes = (document.get('sizes') as List<dynamic>)
         .map((s) => ItemSize.fromMap(s))
         .toList();
-
-    // fui eu quem criou :D
-    minPrice = sizes!.map((e) => e.price!).lastWhere((p) => p < 20);
   }
 
   String? pid;
   String? name;
   String? description;
   List<String>? images;
-  num? minPrice;
 
   List<ItemSize>? sizes;
 
@@ -43,6 +39,15 @@ class Product extends ChangeNotifier {
 
   // saber se tem estoque total
   bool get hasStock => totalStock! > 0;
+
+  num get basePrice {
+    num lowest = double.infinity;
+    for (final size in sizes!) {
+      // caso queira verificar se tem também no estoque
+      if (size.price! < lowest && size.hasStock) lowest = size.price!;
+    }
+    return lowest;
+  }
 
   ItemSize? findSize(String name) {
     try {

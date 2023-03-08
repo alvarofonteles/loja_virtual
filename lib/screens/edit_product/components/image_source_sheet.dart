@@ -71,7 +71,6 @@ class ImageSourceSheet extends StatelessWidget {
             // galeria
             ElevatedButton(
               style: TextButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 110),
                 textStyle: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
