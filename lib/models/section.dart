@@ -14,9 +14,4 @@ class Section {
   String? name;
   String? type;
   List<SectionItem?>? items;
-
-  /*@override
-  String toString() {
-    return '\nNome: $name, Tipo: $type, Itens: $items';
-  }*/
 }

@@ -6,9 +6,4 @@ class SectionItem {
 
   String? image;
   String? product;
-
-  /*@override
-  String toString() {
-    return '\nImege: $image - Produto: $product';
-  }*/
 }
